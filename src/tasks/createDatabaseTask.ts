@@ -11,7 +11,7 @@ import { missingPostgressInstall } from '../constants';
 
 const subTaskOptions = {
   concurrent: false,
-  rendererOptions: { collapse: false },
+  rendererOptions: { collapse: true },
 };
 
 export const createDatabaseTask: ListrTask<ListrContext> = {
