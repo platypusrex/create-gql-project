@@ -1,13 +1,14 @@
 import { ListrTask } from 'listr2';
 import { ListrContext } from '../types';
+import { missingPostgressInstall } from '../constants';
 import {
   createPostgresDatabase,
+  doesPostgresUserExist,
   isDatabaseUnique,
   isValidPostgresNaming,
   updateTypeormConfig,
   validatePostgresInstallation,
 } from '../utils';
-import { missingPostgressInstall } from '../constants';
 
 const subTaskOptions = {
   concurrent: false,
@@ -53,9 +54,15 @@ export const createDatabaseTask: ListrTask<ListrContext> = {
               type: 'Input',
               message: 'Database username:',
               initial: 'admin',
-              validate: (value: string) => {
+              validate: async (value: string) => {
+                const userExists = ctx.isPostgresInstalled
+                  ? await doesPostgresUserExist(value)
+                  : false;
                 if (!isValidPostgresNaming(value)) {
                   return 'Invalid username.';
+                }
+                if (!!userExists) {
+                  return 'Username already exists. Please provide another username.';
                 }
                 return true;
               },
