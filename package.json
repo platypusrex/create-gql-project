@@ -1,0 +1,40 @@
+{
+  "name": "create-gql-project",
+  "version": "0.0.1",
+  "author": "Frank Cooke",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "create-gql-project": "bin/create-gql-project"
+  },
+  "scripts": {
+    "start": "tsc -p tsconfig.json --watch",
+    "build": "yarn clean and tsc -p tsconfig.json",
+    "clean": "npx rimraf ./dist",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{ts,tsx,js}\""
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "enquirer": "^2.3.6",
+    "execa": "^4.0.3",
+    "figlet": "^1.5.0",
+    "fs-extra": "^9.0.1",
+    "listr2": "^2.3.4",
+    "pgtools": "^0.3.0",
+    "sade": "^1.7.3"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.2.0",
+    "@types/fs-extra": "^9.0.1",
+    "@types/node": "^14.0.26",
+    "@types/sade": "^1.7.2",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
+  }
+}
