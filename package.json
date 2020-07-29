@@ -1,6 +1,6 @@
 {
   "name": "create-gql-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Frank Cooke",
   "description": "CLI for scaffolding GQL projects",
   "keywords": [
