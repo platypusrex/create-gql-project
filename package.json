@@ -2,6 +2,22 @@
   "name": "create-gql-project",
   "version": "0.0.1",
   "author": "Frank Cooke",
+  "description": "CLI for scaffolding GQL projects",
+  "keywords": [
+    "cli",
+    "typegraphql",
+    "node",
+    "graphql",
+    "typeorm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platypusrex/create-gql-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/platypusrex/create-gql-project/issues"
+  },
+  "homepage": "https://github.com/platypusrex/create-gql-project#readme",
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
