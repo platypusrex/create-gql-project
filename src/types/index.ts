@@ -1,4 +1,5 @@
 export enum Template {
+  basic = 'basic',
   withAuthentication = 'withAuthentication',
 }
 

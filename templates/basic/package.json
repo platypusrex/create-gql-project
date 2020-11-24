@@ -1,0 +1,12 @@
+{
+  "name": "<repo>",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc --project tsconfig.json",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{ts,tsx,js}\""
+  }
+}

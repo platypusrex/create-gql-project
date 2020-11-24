@@ -1,8 +1,8 @@
 import { Listr, ListrBaseClassOptions } from 'listr2';
 import { copyProjectFilesTask } from './copyProjectFilesTask';
+import { createDatabaseTask } from './createDatabaseTask';
 import { installDependenciesTask } from './installDependenciesTask';
 import { ListrContext, Template } from '../types';
-import { createDatabaseTask } from './createDatabaseTask';
 
 const listrOptions: ListrBaseClassOptions = {
   concurrent: false,
@@ -10,6 +10,7 @@ const listrOptions: ListrBaseClassOptions = {
 };
 
 export const tasks: Record<Template, Listr<ListrContext>> = {
+  [Template.basic]: new Listr([copyProjectFilesTask, installDependenciesTask], listrOptions),
   [Template.withAuthentication]: new Listr(
     [copyProjectFilesTask, createDatabaseTask, installDependenciesTask],
     listrOptions

@@ -9,7 +9,7 @@ import { hashPassword, validatePassword } from '../utils/authUtils';
 export class UserResolver {
   @Query(() => User, { nullable: true })
   async me(@Ctx() ctx: Context): Promise<User | null> {
-    const userId = ctx.req.session!.userId; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const userId = ctx.req.session?.userId;
     if (!userId) {
       return null;
     }
@@ -46,7 +46,7 @@ export class UserResolver {
       return null;
     }
 
-    ctx.req.session!.userId = user.id; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    ctx.req.session.userId = user.id;
     return user;
   }
 }

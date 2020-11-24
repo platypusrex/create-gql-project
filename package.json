@@ -1,6 +1,6 @@
 {
   "name": "create-gql-project",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Frank Cooke",
   "description": "CLI for scaffolding GQL projects",
   "keywords": [
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "tsc -p tsconfig.json --watch",
-    "build": "yarn clean and tsc -p tsconfig.json",
+    "build": "yarn clean && tsc -p tsconfig.json",
     "clean": "npx rimraf ./dist",
     "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
     "lint:fix": "eslint --fix \"src/**/*.{ts,tsx,js}\""
