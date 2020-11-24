@@ -11,7 +11,7 @@ export const missingYarnInstall = `Yarn is not available, install it via ${chalk
   'npm install -g yarn'
 )}`;
 
-export const missingPostgressInstall = `Postgres is not available, install it via ${chalk.green(
+export const missingPostgresInstall = `Postgres is not available, install it via ${chalk.green(
   'homebrew install postgres'
 )}`;
 

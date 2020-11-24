@@ -10,7 +10,7 @@ export const parseArgsIntoOptions = async (
   { g, n }: ParsedArgs
 ): Promise<Options> => ({
   projectDirectory,
-  template: Template.withAuthentication,
+  template: Template.basic,
   git: g,
   pkgManager: n ? 'npm' : 'yarn',
 });

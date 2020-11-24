@@ -13,3 +13,4 @@ export * from './validatePostgresInstallation';
 export * from './isDatabaseUnique';
 export * from './isValidPostgresNaming';
 export * from './doesPostgresUserExist';
+export * from './selectTemplate';

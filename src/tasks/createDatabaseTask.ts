@@ -1,6 +1,6 @@
 import { ListrTask } from 'listr2';
 import { ListrContext } from '../types';
-import { missingPostgressInstall } from '../constants';
+import { missingPostgresInstall } from '../constants';
 import {
   createPostgresDatabase,
   doesPostgresUserExist,
@@ -25,7 +25,7 @@ export const createDatabaseTask: ListrTask<ListrContext> = {
           task: async (ctx, task) => {
             ctx.isPostgresInstalled = await validatePostgresInstallation();
             if (!ctx.isPostgresInstalled) {
-              task.skip(missingPostgressInstall);
+              task.skip(missingPostgresInstall);
             }
           },
           options: { persistentOutput: true },

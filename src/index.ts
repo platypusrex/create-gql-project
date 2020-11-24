@@ -6,6 +6,7 @@ import {
   generateUniqueProjectDirectory,
   parseArgsIntoOptions,
   removeProjectDirectory,
+  selectTemplate,
 } from './utils';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -26,6 +27,7 @@ program
 
     const options = await parseArgsIntoOptions(name, args);
     options.projectDirectory = await generateUniqueProjectDirectory(options.projectDirectory);
+    options.template = await selectTemplate();
 
     const templateDirectory = await getTemplatesDirectory(options.template);
     const extendedOptions = { ...options, templateDirectory };
