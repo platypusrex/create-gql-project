@@ -33,27 +33,27 @@ to raise a PR to add it to the mix.
 
 ### Templates
 
-1. apollo-typegraphql
+1. `apollo-typegraphql`
 
 This is just a standard Apollo Typegraphql node/express server. If your in need a simple node server, 
 are going to code first route, and want to use typegraphql this is probably a solid bet to get
 you started. Oh yeah - hope you enjoy typescript as well. :)
 
-core stack:
+**core stack:**
 - apollo
 - express
 - typescript
 - typegraphql
 - eslint/prettier
 
-2. apollo-typegraphql-auth 
+2. `apollo-typegraphql-auth` 
 
 Pretty much the same stack and setup as the above but also includes some functional authentication. Since Typegraphql and Typeorm play
 very nicely together, that is the choice ORM for this particular template with Postgres for your persistence layer. The user entity
 has been created for you here along with some core auth resolvers (login, register, me). Redis is included here along with the some
 opinionated setup for session cookies. The CLI will also attempt to install a database (I believe this could be improved) as well.
 
-core stack:
+**core stack:**
 - apollo
 - express
 - typescript
@@ -63,7 +63,7 @@ core stack:
 - redis
 - eslint/prettier
 
-3. next-giraphql-prisma-nextauth
+3. `next-giraphql-prisma-nextauth`
 
 I'm admittedly a fan of next.js so it's only logical that I start included some templates here. This particular stack is a little new
 for me but so far I'm enjoying it. Using giraphql which has a similar API to nexus and some of the core setup for this is good to go. An API route
@@ -74,7 +74,7 @@ get things 100% ready to go. Prisma is setup to store any user data and some cor
 Chakra-ui is also setup and ready to go here. It's a solid choice for small/medium project and has a ton of great core components. Should be easy to
 swap out for something else if it doesn't suite your needs.
 
-core stack:
+**core stack:**
 - next.js
 - typescript
 - giraphql
