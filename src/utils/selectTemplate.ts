@@ -8,7 +8,7 @@ export const selectTemplate = async (): Promise<Template> => {
       type: 'select',
       name: 'template',
       message: 'Select a template:',
-      choices: ['basic', 'withAuthentication'],
+      choices: ['apollo-typegraphql', 'apollo-typegraphql-auth', 'next-giraphql-prisma-nextauth'],
     });
 
     return response.template;

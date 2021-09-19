@@ -1,6 +1,7 @@
 export enum Template {
-  basic = 'basic',
-  withAuthentication = 'withAuthentication',
+  'apollo-typegraphql' = 'apollo-typegraphql',
+  'apollo-typegraphql-auth' = 'apollo-typegraphql-auth',
+  'next-giraphql-prisma-nextauth' = 'next-giraphql-prisma-nextauth',
 }
 
 export interface Options {
