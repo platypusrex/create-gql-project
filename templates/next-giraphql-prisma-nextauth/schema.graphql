@@ -1,0 +1,9 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+}
+
+type Query {
+  hello(name: String): String!
+}

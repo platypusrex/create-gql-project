@@ -37,13 +37,19 @@ export const createDatabaseTask: ListrTask<ListrContext> = {
               type: 'Input',
               message: 'Database name:',
               validate: async (value: string) => {
-                const isDatabaseNameUnique = ctx.isPostgresInstalled
-                  ? await isDatabaseUnique(value)
-                  : false;
+                let databaseExists;
+
+                try {
+                  databaseExists = ctx.isPostgresInstalled ? await isDatabaseUnique(value) : false;
+                } catch (e) {
+                  databaseExists = false;
+                }
+
                 if (!isValidPostgresNaming(value)) {
                   return 'Invalid database name.';
                 }
-                if (!!isDatabaseNameUnique) {
+
+                if (!!databaseExists) {
                   return 'Database name already in use. Please provide another name.';
                 }
                 return true;
@@ -55,12 +61,17 @@ export const createDatabaseTask: ListrTask<ListrContext> = {
               message: 'Database username:',
               initial: 'admin',
               validate: async (value: string) => {
-                const userExists = ctx.isPostgresInstalled
-                  ? await doesPostgresUserExist(value)
-                  : false;
+                let userExists;
+                try {
+                  userExists = ctx.isPostgresInstalled ? await doesPostgresUserExist(value) : false;
+                } catch (e) {
+                  userExists = false;
+                }
+
                 if (!isValidPostgresNaming(value)) {
                   return 'Invalid username.';
                 }
+
                 if (!!userExists) {
                   return 'Username already exists. Please provide another username.';
                 }
@@ -81,8 +92,12 @@ export const createDatabaseTask: ListrTask<ListrContext> = {
         {
           title: 'Creating postgres database...',
           task: async ({ databaseOptions }) => {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            await createPostgresDatabase(databaseOptions!);
+            try {
+              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+              await createPostgresDatabase(databaseOptions!);
+            } catch (e) {
+              task.skip('Error when trying to create database. Skipping database creation task.');
+            }
           },
           skip: ({ databaseOptions, isPostgresInstalled }) =>
             !databaseOptions && !!isPostgresInstalled,

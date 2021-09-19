@@ -26,8 +26,8 @@ const baseDependencies = {
 };
 
 export const dependencies: Record<Template, { deps: string[]; devDeps: string[] }> = {
-  [Template.basic]: baseDependencies,
-  [Template.withAuthentication]: {
+  [Template['apollo-typegraphql']]: baseDependencies,
+  [Template['apollo-typegraphql-auth']]: {
     deps: [
       ...baseDependencies.deps,
       'bcryptjs',
@@ -44,6 +44,40 @@ export const dependencies: Record<Template, { deps: string[]; devDeps: string[] 
       '@types/cors',
       '@types/express-session',
       '@types/ioredis',
+    ],
+  },
+  [Template['next-giraphql-prisma-nextauth']]: {
+    deps: [
+      '@chakra-ui/react',
+      '@emotion/react',
+      '@emotion/styled',
+      '@giraphql/core',
+      '@next-auth/prisma-adapter',
+      '@prisma/client',
+      'apollo-server-micro',
+      'framer-motion',
+      'graphql',
+      'micro',
+      'next',
+      'next-auth',
+      'next-plugin-graphql',
+      'nexus',
+      'nodemailer',
+      'react',
+      'react-dom',
+      'react-icons',
+    ],
+    devDeps: [
+      '@types/node',
+      '@types/react',
+      '@typescript-eslint/eslint-plugin',
+      'eslint',
+      'eslint-config-next',
+      'eslint-config-prettier',
+      'eslint-plugin-prettier',
+      'prettier',
+      'prisma',
+      'typescript',
     ],
   },
 };

@@ -10,7 +10,7 @@ export const parseArgsIntoOptions = async (
   { g, n }: ParsedArgs
 ): Promise<Options> => ({
   projectDirectory,
-  template: Template.basic,
+  template: Template['apollo-typegraphql'],
   git: g,
   pkgManager: n ? 'npm' : 'yarn',
 });
